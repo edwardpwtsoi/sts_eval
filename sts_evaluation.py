@@ -39,7 +39,15 @@ benchmarks = {
     'sts-es': {
         'filename': "data/stsbenchmark/STS2017.track3.es-es.tsv",
         'loader': stsev.load_sts2017es
-    }    
+    },
+    'stsb-multi-en': {
+        'filename': "data/stsb_multi_mt/stsb_multi_mt-test_en.tsv",
+        'loader': stsev.load_stsb_multi_mt
+    },
+    'stsb-multi-zh': {
+        'filename': "data/stsb_multi_mt/stsb_multi_mt-test_zh.tsv",
+        'loader': stsev.load_stsb_multi_mt
+    }
 }
 
 metrics = ["cosine", "euclidean"]
