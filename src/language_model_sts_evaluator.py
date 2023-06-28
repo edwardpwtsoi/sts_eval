@@ -26,6 +26,16 @@ def load_stsbenchmark(dataset_filename):
     return (sentence_1, sentence_2, dev_scores)
 
 
+def load_stsb_multi_mt(dataset_filename):
+    """Loads the https://huggingface.co/datasets/stsb_multi_mt dataset"""
+    lines = open(dataset_filename).readlines()
+    sts = [l.strip().split("\t")[:7] for l in lines[1:]]
+    sentence_1 = [e[0] for e in sts]
+    sentence_2 = [e[1] for e in sts]
+    dev_scores = [float(e[2]) for e in sts]    
+    return (sentence_1, sentence_2, dev_scores)
+
+
 def load_sts2017es(dataset_filename):
     """Loads the prebuilt STS2017 es-es dataset"""
     lines = open(dataset_filename).readlines()
